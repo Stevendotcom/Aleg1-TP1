@@ -16,7 +16,7 @@ struct Line
 Vector2 GetMouseCoord();
 
 /**
- * @brief Draw a line on screen with color red and save it on an array
+ * @brief Draw a line on screen with COLOR_LINE and save it on an array
  * @param line
  * @param lines 
  */
