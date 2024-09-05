@@ -16,9 +16,3 @@ void DrawLine(Line line, Line lines[LINES_AMOUNT], int currentPos)
 
 	lines[currentPos] = line;
 }
-
-bool IsAQuad(Line lines[LINES_AMOUNT])
-{
-	return false;
-}
-
