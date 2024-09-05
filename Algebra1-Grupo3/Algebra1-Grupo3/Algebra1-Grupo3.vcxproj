@@ -82,12 +82,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
-
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -147,11 +144,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="isAQuad.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Corners.cpp" />
+    <ClCompile Include="Lines.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Squares.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Corners.h" />
+    <ClInclude Include="Lines.h" />
     <ClInclude Include="Squares.h" />
   </ItemGroup>
   <ItemGroup>
