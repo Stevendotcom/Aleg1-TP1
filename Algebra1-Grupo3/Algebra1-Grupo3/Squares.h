@@ -24,9 +24,7 @@ struct Quad
  * @return whether a quad was found or not
  */
 bool IsAQuad(Line lines[], Vector2 firstCorner, Vector2 thisCorner, Vector2 quadCorners[4], int segments,
-             std::vector<Quad>
-             quadList);
-
+             std::vector<Quad>& quadList);
 /**
  * @brief checks whether 2 quads are the same quad
  * @param quad1 first quad to compare
@@ -41,4 +39,6 @@ bool IsSameQuad(Vector2 quad1[], Quad& quad2);
  * @param corner2 second corner to compare
  * @return whether is same cornet or not
  */
-bool IsSameCorner(const Vector2& corner1, const Vector2& corner2);
+bool IsSameCorner(Vector2& corner1, Vector2& corner2);
+
+

@@ -6,32 +6,34 @@ using namespace std;
 
 void MainLoop()
 {
-	const int screenWidth = 800;
-	const int screenHeight = 600;
+    const int screenWidth = 800;
+    const int screenHeight = 600;
 
-	int currentLine = 0;
-	int currentPosition = START;
-	Line myLines[LINES_AMOUNT];
+    int currentLine = 0;
+    int currentPosition = START;
+    Line myLines[LINES_AMOUNT];
 
-	InitWindow(screenWidth, screenHeight, "Quad test");
-	SetTargetFPS(60);
+    InitWindow(screenWidth, screenHeight, "Quads");
+    SetTargetFPS(60);
 
-	while (!WindowShouldClose())
-	{
-		CheckLinesCreated(myLines, currentPosition, currentLine);
+    while (!WindowShouldClose())
+    {
+        CheckLinesCreated(myLines, currentPosition, currentLine);
 
-		BeginDrawing();
+        BeginDrawing();
 
-		SearchCorner(myLines);
+        SearchCorner(myLines);
 
-		ClearBackground(BLACK);
+        ClearBackground(BLACK);
 
-		DrawText("Clic on two positions!", 20, 20, 20, WHITE);
+        DrawText("Clic on two positions to make a line.", 20, 20, 20, RAYWHITE);
+        DrawText("Then continue until you have 4 lines!", 20, 45, 20, RAYWHITE);
+        DrawText("Your compliance is not a factor.", 20, 70, 20, RED);
 
-		DrawLines(myLines);
-		
-		EndDrawing();
-	}
+        DrawLines(myLines);
 
-	CloseWindow();
+        EndDrawing();
+    }
+
+    CloseWindow();
 }

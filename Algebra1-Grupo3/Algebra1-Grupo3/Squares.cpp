@@ -1,7 +1,8 @@
 #include "Squares.h"
 
+
 bool IsAQuad(Line lines[], Vector2 firstCorner, Vector2 thisCorner, Vector2 quadCorners[4], int segments,
-	std::vector<Quad> quadList)
+	std::vector<Quad>& quadList)
 {
 	bool isSameQuad = false;
 
@@ -77,3 +78,4 @@ bool IsSameQuad(Vector2 quad1[], Quad& quad2)
 		&& IsSameCorner(quad2.C3, quad1[2])
 		&& IsSameCorner(quad2.C4, quad1[3]);
 }
+
