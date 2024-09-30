@@ -39,6 +39,7 @@ void CheckLinesCreated(Line myLines[], int& currentPosition, int& currentLine)
 				myLines[currentLine].Finish.y = mousePos.y;
 				currentPosition = START;
 				myLines[currentLine].Done = true;
+				myLines->lineCounter++;
 				currentLine++;
 			}
 		}

@@ -8,8 +8,11 @@ struct Line
 	Vector2 Start;
 	Vector2 Finish;
 	Vector2 Corners[MAX_CORNERS];
+	Vector2 quadCorners[4];
 	int CornersAmount;
+	int lineCounter;
 	bool Done = false;
+	bool isquadDraw = false;
 };
 
 const int START = 1;

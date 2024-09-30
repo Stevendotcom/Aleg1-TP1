@@ -41,4 +41,4 @@ bool IsSameQuad(Vector2 quad1[], Quad& quad2);
  * @param corner2 second corner to compare
  * @return whether is same cornet or not
  */
-bool IsSameCorner(const Vector2& corner1, const Vector2& corner2);
+bool IsSameCorner( Vector2& corner1,  Vector2& corner2);

@@ -20,8 +20,6 @@ void SearchCorner(Line line[], Vector2 Corners[])
 
 void LineIntersections(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, Vector2 Corners[])
 {
-	Line auxCorner;
-
 	// calculate the distance to intersection point
 	float uA = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / ((y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1));
 	float uB = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / ((y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1));
@@ -34,7 +32,6 @@ void LineIntersections(float x1, float y1, float x2, float y2, float x3, float y
 		float intersectionY = y1 + (uA * (y2 - y1));
 
 		AddCorner(Corners, intersectionY, intersectionX);
-
 		DrawCircle(intersectionX, intersectionY, 5, RED);
 	}
 }
@@ -56,7 +53,7 @@ void AddCorner(Vector2 Corners[], int newY, int newX)
 
 }
 
-bool IsSameCorner(const Vector2& corner1, const Vector2& corner2)
+bool IsSameCorner( Vector2& corner1, Vector2& corner2)
 {
 	return corner1.x < FLT_EPSILON + corner2.x && corner1.x > corner2.x - FLT_EPSILON
 		&& corner1.y < FLT_EPSILON + corner2.y && corner1.y > corner2.y - FLT_EPSILON;
