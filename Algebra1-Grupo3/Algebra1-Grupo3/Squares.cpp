@@ -64,7 +64,6 @@ bool IsAQuad(Line lines[], Vector2 firstCorner, Vector2 thisCorner, Vector2 quad
 				{
 					IsAQuad(lines, firstCorner, lines[line].Corners[nextCorner], quadCorners, segments, quadList);
 				}
-
 			}
 		}
 	}

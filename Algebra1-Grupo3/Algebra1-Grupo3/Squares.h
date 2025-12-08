@@ -3,8 +3,6 @@
 #include <vector>
 #include "Lines.h"
 
-
-
 struct Quad
 {
 	Vector2 C1;

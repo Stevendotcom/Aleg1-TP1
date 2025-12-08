@@ -50,7 +50,6 @@ void AddCorner(Vector2 Corners[], int newY, int newX)
 			return;
 		}
 	}
-
 }
 
 bool IsSameCorner( Vector2& corner1, Vector2& corner2)

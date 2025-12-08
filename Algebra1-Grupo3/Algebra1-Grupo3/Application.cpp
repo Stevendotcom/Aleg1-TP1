@@ -22,8 +22,6 @@ void MainLoop()
 
 	Line Quad[MAX_CORNERS];
 
-
-
 	InitWindow(screenWidth, screenHeight, "Quad test");
 	SetTargetFPS(60);
 
@@ -98,7 +96,6 @@ void GetQuad(Line myLines[], Line Intersect[])
 
 			for (int j = 0; j < LINES_AMOUNT; j++)
 			{
-
 				if (actualLine.Start.x != myLines[j].Start.x && actualLine.Start.y != myLines[j].Start.y)
 				{
 					isIntersect1 = isIntersect(actualLine.Start.x, actualLine.Start.y, actualLine.Finish.x, actualLine.Finish.y, myLines[j].Start.x, myLines[j].Start.y, myLines[j].Finish.x, myLines[j].Finish.y, Intersect[i]);
@@ -114,24 +111,18 @@ void GetQuad(Line myLines[], Line Intersect[])
 
 						for (int j = 0; j < LINES_AMOUNT; j++)
 						{
-
 							isIntersect2 = isIntersect(actualLine.Start.x, actualLine.Start.y, actualLine.Finish.x, actualLine.Finish.y, myLines[j + 2].Start.x, myLines[j + 2].Start.y, myLines[j + 2].Finish.x, myLines[j + 2].Finish.y, Intersect[i + 1]);
-
 
 							//si la segunda linea es intersectada paso a analizar la que sigue
 							if (isIntersect2)
 							{
-
 								for (int i = 0; i < LINES_AMOUNT; i++)
 								{
 									actualLine = myLines[i + 2];
 
 									for (int j = 0; j < LINES_AMOUNT; j++)
 									{
-
 										isIntersect3 = isIntersect(actualLine.Start.x, actualLine.Start.y, actualLine.Finish.x, actualLine.Finish.y, myLines[j + 3].Start.x, myLines[j + 3].Start.y, myLines[j + 3].Finish.x, myLines[j + 3].Finish.y, Intersect[i + 2]);
-
-
 
 										//si la tercera linea es intersectada paso a analizar la que sigue
 										if (isIntersect3)
@@ -142,7 +133,6 @@ void GetQuad(Line myLines[], Line Intersect[])
 
 												for (int j = 0; j < LINES_AMOUNT; j++)
 												{
-
 													isIntersect3 = isIntersect(actualLine.Start.x, actualLine.Start.y, actualLine.Finish.x, actualLine.Finish.y, myLines[j].Start.x, myLines[j].Start.y, myLines[j].Finish.x, myLines[j].Finish.y, Intersect[i + 3]);
 
 													//si la tercera linea es intersectada paso a analizar la que sigue
@@ -154,25 +144,17 @@ void GetQuad(Line myLines[], Line Intersect[])
 														DrawLine(Intersect[i + 3].Corners->x, Intersect[i + 3].quadCorners->y, Intersect[i].Corners->x, Intersect[i].quadCorners->y, BLUE);
 														Intersect->isquadDraw = true;
 													}
-
 												}
 											}
 										}
-
 									}
 								}
-
 							}
-
 						}
 					}
 				}
-
 			}
-
 			break;
 		}
-
 	}
-
 }
